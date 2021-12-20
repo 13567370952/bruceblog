@@ -1,12 +1,15 @@
 module.exports = {
-  // 添加置顶按钮 
+  // 置顶按钮、图片缩放
   plugins: ['@vuepress/back-to-top', '@vuepress/medium-zoom'],
   head: [
     ['link', { rel: 'icon', href: '/img/logo.png' }]
   ],
+  // 根路径，和仓库名一致
   base: '/bruceblog/',
+  // 左上角标题
   title: 'BruceBlog',
   markdown: {
+    // 代码块行号
     lineNumbers: true
   },
   themeConfig: {
@@ -25,7 +28,7 @@ module.exports = {
     // 默认值是 true 。设置为 false 来禁用所有页面的 上一篇 链接
     prevLinks: true,
     // 导航栏显示 gitee 仓库
-    repo: 'https://gitee.com/brucecai55520',
+    repo: 'https://gitee.com/brucecai55520/bruceblog',
     repoLabel: 'Gitee'
   }
 }
