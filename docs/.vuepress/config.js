@@ -1,11 +1,14 @@
 module.exports = {
   // 添加置顶按钮 
-  plugins: ['@vuepress/back-to-top'],
+  plugins: ['@vuepress/back-to-top', '@vuepress/medium-zoom'],
   head: [
     ['link', { rel: 'icon', href: '/img/logo.png' }]
   ],
   base: '/bruceblog/',
   title: 'BruceBlog',
+  markdown: {
+    lineNumbers: true
+  },
   themeConfig: {
     // 配置左上角的 logo
     logo: '/img/logo.png',
