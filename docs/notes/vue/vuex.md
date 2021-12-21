@@ -34,6 +34,33 @@ Vuex 工作原理图：
             ├── cart.js       # 购物车模块
             └── products.js   # 产品模块
 
+## Vuex 核心概念
+
+### state
+
+- Vuex 管理的状态对象
+- 唯一的
+
+### actions
+
+- 值为一个对象，包含多个响应用户动作的回调函数
+- 通过 `commit()`触发 mutation 中函数的调用，间接更新 state
+- 可包含异步代码
+
+### mutations
+
+- 值为一个对象，包含多个直接更新 state 的方法
+- 不能写异步代码，只能单纯地操作 state
+
+### getters
+
+- 值为一个对象，包含多个用于返回数据的函数
+- 类似于计算属性，getters 返回的数据依赖于 state 的数据
+
+### modules
+
+- 一个 module 是一个 store 的配置对象，与一个组件对应
+
 ## 搭建 Vuex 环境
 
 安装 Vuex：`npm install vuex --save`
@@ -161,7 +188,7 @@ export default new Vuex.Store({
 
 ## 四个 mapXxx 方法
 
-**_mapState()_**
+### mapState()
 
 - 将 `state` 状态映射为计算属性
 - 对象写法：键为自取的计算属性名，值为对应的状态（必须为字符串）
@@ -190,7 +217,7 @@ computed: {
 
 ```
 
-**_mapGetters_**
+### mapGetters
 
 - 将 `getters` 的数据映射为计算属性
 
@@ -213,7 +240,7 @@ computed: {
 }
 ```
 
-**_mapActions_**
+### mapActions
 
 - 生成与 `actions` 对话的函数，即包含 `$store.dispatch()`
 - `mapActions` 生成的函数不会传入参数，需要在调用时手动传入数据，不传参默认传入 `$event`
@@ -243,7 +270,7 @@ methods: {
 <button @click="incrementOdd(number)">奇数+1</button>
 ```
 
-**_mapMutations_**
+### mapMutations
 
 - 生成与 `mutations` 对话的函数，即包含 `$store.commit()`
 - 同样注意传递参数，以及数组形式函数名的问题

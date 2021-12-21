@@ -4,12 +4,12 @@
 
 ## 路由
 
-**_何为路由_**
+### 何为路由
 
 - 一组路由即一组映射关系（key-value）
 - key 为路径，value 可能是 function 或 component
 
-**_前端路由_**
+### 前端路由
 
 前端路由即地址和组件之间的对应关系（以下已哈希模式为例）。
 
@@ -59,7 +59,7 @@ export default {
 }
 ```
 
-**_后端路由_**
+### 后端路由
 
 - 后端路由是指请求方式、请求地址与 `function` 处理函数之间的对应关系
 - 服务器收到一个请求，根据请求方式、路径匹配对应的函数处理请求，返回响应数据
@@ -164,7 +164,46 @@ new Vue({
 - 组件分为路由组件和一般组件，前者放在 `pages(或views)` 文件夹，后者放在 `components` 文件夹
 - `$route` 存储着组件的路由规则信息
 - `$router` 是路由器对象，只有一个
-- `<router-link>` 的 `replace` 属性
+
+## 声明式导航
+
+`<router-link>` 4 个常用属性：
+
+1. `to` 属性
+
+- 用于指定跳转路由
+
+```html
+<router-link to="/about"></router-link>
+```
+
+2. `tag` 属性
+
+- 指明 `<router-link>` 最终被渲染为何种标签，默认是 a 标签
+- 渲染为其他标签也会监听点击，触发导航
+
+```html
+<router-link to="/about" tag="li">tag</router-link>
+
+<li>tag</li>
+```
+
+3. `replace` 属性
+
+- 路由跳转不会增加新的历史记录，而是替换当前历史记录
+
+```html
+<router-link to="/about" replace>About</router-link>
+```
+
+4. `active-class` 属性
+
+- 指明路由被激活时添加的类名，默认为 `router-link-active`
+- 详见[路由高亮](#路由高亮)
+
+```html
+<router-link to="/about" active-class="active">About</router-link>
+```
 
 ## 路由高亮
 
@@ -243,27 +282,25 @@ const routes = [
 ]
 ```
 
-## 路由的 query 参数
+## 编程式导航
 
-传递参数：
+声明式导航：
 
-```html
-<router-link :to="`/home/detail?id=${id}&title=${title}`">字符串写法</router-link>
+- 通过点击链接实现导航
+- 如普通网页点击 `a` 链接，`vue` 点击 `<router-link>`
 
-<router-link
-  :to="{
-    path: '/home/detail',
-    query: {
-      id: 1,
-      title: 'hello',
-    }
-  }"
->
-  对象写法
-</router-link>
-```
+编程式导航：
 
-接收参数：`this.$route.query`
+- 通过调用 API 实现导航
+- 普通网页通过 `location.href` 的方式跳转页面也是编程式导航
+
+`vue-router` 中实现编程式导航的 API ：
+
+- `this.$router.push('hash地址')` ：跳转到指定页面，并增加一条历史记录
+- `this.$router.replace('hash地址')` ：跳转页面，但不会新增历史记录，而是替换当前的历史记录
+- `this.$router.go(数值)` ：历史记录前进或后退，相当于点击浏览器前进后退箭头
+- `this.$router.forward()` ：前进一步
+- `this.$router.back()` ：后退一步
 
 ## 命名路由
 
@@ -285,7 +322,35 @@ const routes = [
 <router-link :to="{ name: 'about', query: { id: 1, title: 'hello' }}"></router-link>
 ```
 
-## 动态路由（params 参数）
+## 路由传参
+
+### query 参数
+
+传递参数：
+
+```html
+<router-link :to="`/home/detail?id=${id}&title=${title}`">字符串写法</router-link>
+<router-link
+  :to="{
+    path: '/home/detail',
+    query: {
+      id: 1,
+      title: 'hello',
+    }
+  }"
+>
+  对象写法
+</router-link>
+```
+
+```js
+this.$router.push(`/home/detail?id=${id}&title=${title}`)
+this.$router.push({ path: '/home/detail', query: { id: 1, title: 'query' } })
+```
+
+接收参数：`this.$route.query`
+
+### params 参数（动态路由）
 
 动态路由是把 Hash 地址中可变的部分定义为参数项，从而提高路由规则的复用性。
 
@@ -305,13 +370,17 @@ const routes = [
 
 ```html
 <router-link :to="/movie/1/21">字符串写法</router-link>
-
-<router-link :to="{name:'movie', params: {id:1, age:21}}">对象写法</router-link>
+<!-- query 和 params 可以一起用 -->
+<router-link :to="`/movie/1/21?id=${id}`">字符串写法</router-link>
+<router-link :to="{name:'movie', params: {id:1, age:21}, query: {school: 'love'}}">对象写法</router-link>
 ```
 
-注意：`params` 只能和 `name` 搭配使用，不能和 `query` 搭配！
+```js
+this.$router.push(`/movie/1/21?id=${id}`)
+this.$router.push({ name: 'movie', params: { id: 1, age: 21 }, query: { school: 'love' } })
+```
 
-动态路由渲染出来的组件中，通过 `this.$route.params` 对象访问动态匹配的参数值。
+接收 params 参数：
 
 ```html
 <template>
@@ -321,7 +390,7 @@ const routes = [
 </template>
 ```
 
-## 路由的 props 配置
+### 路由的 props 配置
 
 简化路由组件接收参数。
 
@@ -366,25 +435,23 @@ export default {
 </template>
 ```
 
-## 编程式导航
+### 路由传参注意事项
 
-声明式导航：
+1. path 不能和 params 一起使用。path+query、name+query/params 都行
+2. 如何指定 params 参数可传可不传？
 
-- 通过点击链接实现导航
-- 如普通网页点击 `a` 链接，`vue` 点击 `<router-link>`
+- 若声明了 params 参数 `path: '/movie/:title'`，默认是必须要传递 params 参数的，否则 URL 会出现问题
+- 指定 params 参数可不传：`path: '/movie/:title?'`
 
-编程式导航：
+3. 已指明 params 参数可传可不传，但如果传递空串，如何解决？
 
-- 通过调用 API 实现导航
-- 普通网页通过 `location.href` 的方式跳转页面也是编程式导航
+- 传递空串，URL 也会出现问题
+- 方法：使用 `undefined`
 
-`vue-router` 中实现编程式导航的 API ：
-
-- `this.$router.push('hash地址')` ：跳转到指定页面，并增加一条历史记录
-- `this.$router.replace('hash地址')` ：跳转页面，但不会新增历史记录，而是替换当前的历史记录
-- `this.$router.go(数值)` ：历史记录前进或后退，相当于点击浏览器前进后退箭头
-- `this.$router.forward()` ：前进一步
-- `this.$router.back()` ：后退一步
+```js
+this.$router.push({ name: 'search', params: { keyword: '' }, query: { key: this.key } })
+this.$router.push({ name: 'search', params: { keyword: '' || undefined }, query: { key: this.key } })
+```
 
 ## 路由元信息 meta
 
@@ -403,11 +470,11 @@ const routes = [
 
 ## 路由守卫
 
-作用：对路由进行权限控制。
+> 作用：对路由进行权限控制。
+>
+> 分类：全局守卫、独享守卫、组件内守卫
 
-分类：全局守卫、独享守卫、组件内守卫
-
-**_全局守卫_**
+### 全局守卫
 
 - 全局前置守卫：`beforeEach()`
 - 全局后置守卫：`afterEach()`
@@ -451,7 +518,7 @@ router.afterEach((to,from) => {
 })
 ```
 
-**_独享路由守卫_**
+### 独享路由守卫
 
 - 某一条路由规则独享的守卫
 - 独享守卫只一个
@@ -466,7 +533,7 @@ router.afterEach((to,from) => {
 }
 ```
 
-**_组件内路由守卫_**
+### 组件内路由守卫
 
 ```js
 export default {
@@ -484,7 +551,7 @@ export default {
 }
 ```
 
-**_各个守卫执行顺序_**
+### 各个守卫执行顺序
 
 从 `About` 组件通过路由规则进入 `Home` 组件：
 
