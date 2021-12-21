@@ -5,5 +5,6 @@ module.exports = {
   '/notes/react': require('../notes/react/sidebar'),
   '/notes/webpack': require('../notes/webpack/sidebar'),
   '/notes/ide': require('../notes/ide/sidebar'),
-  '/notes/git': require('../notes/git/sidebar')
+  '/notes/git': require('../notes/git/sidebar'),
+  '/notes/h5c3': require('../notes/h5c3/sidebar')
 }
