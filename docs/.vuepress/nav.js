@@ -13,4 +13,10 @@ module.exports = [
       { text: 'Git', link: '/notes/git/git' },
     ]
   },
+  {
+    text: 'Learn Other',
+    items: [
+      { text: 'Python', link: '/otherNotes/python/crawler' }
+    ]
+  }
 ]

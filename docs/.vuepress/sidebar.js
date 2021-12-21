@@ -6,5 +6,6 @@ module.exports = {
   '/notes/webpack': require('../notes/webpack/sidebar'),
   '/notes/ide': require('../notes/ide/sidebar'),
   '/notes/git': require('../notes/git/sidebar'),
-  '/notes/h5c3': require('../notes/h5c3/sidebar')
+  '/notes/h5c3': require('../notes/h5c3/sidebar'),
+  '/otherNotes/python': require('../otherNotes/python/sidebar')
 }
