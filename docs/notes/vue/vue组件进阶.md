@@ -1,6 +1,6 @@
 # vue 组件进阶
 
-## 动态组件 & keep-alive
+## 动态组件
 
 vue 提供了内置的 `<component>` 组件用于动态切换组件。
 
@@ -11,6 +11,8 @@ vue 提供了内置的 `<component>` 组件用于动态切换组件。
 <button @click="comName = 'Left'">展示Left组件</button>
 <button @click="comName = 'Right'">展示Right组件</button>
 ```
+
+## keep-alive
 
 默认情况下，切换动态组件时无法保持组件的状态。此时可以使用 vue 内置的 `<keep-alive>` 组件保持动态组件的状态，对被包裹的组件进行状态缓存。
 
@@ -217,12 +219,12 @@ export default {
 
 ## 自定义指令
 
-**_自定义指令分类_**
+### 分类
 
 - 私有自定义指令：在组件的 `directives` 节点声明
 - 全局自定义指令：在 `main.js` 文件中声明
 
-**_自定义指令完整写法_**
+### 完整写法
 
 ```html
 <input type="text" v-focus="content" />
@@ -268,7 +270,7 @@ Vue.directive('focus', {
 })
 ```
 
-**_自定义指令简写形式_**
+### 简写形式
 
 - 当 `bind` 函数和 `update` 函数里的逻辑完全相同时，可以简写
 - 不需要定义 `inserted` 函数才使用简写形式
@@ -291,7 +293,7 @@ Vue.directive('color', (el, binding) => {
 }))
 ```
 
-**_注意事项_**
+### 注意事项
 
 - 自定义指令使用时需要添加 `v-` 前缀
 - 指令名如果是多个单词，要使用 `kebab-case` 短横线命名方式，不要用 `camelCase` 驼峰命名

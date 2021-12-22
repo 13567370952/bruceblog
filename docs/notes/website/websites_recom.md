@@ -39,6 +39,10 @@
 - [Redux](https://redux.js.org/)
 - [Redux 中文文档](https://www.redux.org.cn/)
 - [Node.js 中文网](http://nodejs.cn/)
+- [npm](https://www.npmjs.com/)
+- [axios 中文文档](http://www.axios-js.com/)
+- [Lodash 中文文档](https://www.lodashjs.com/)
+- [Swiper 中文网](https://www.swiper.com.cn/)
 - [Bootstrap 中文网](https://www.bootcss.com/)
 - [jQuery API 中文文档](https://www.jquery123.com/)
 

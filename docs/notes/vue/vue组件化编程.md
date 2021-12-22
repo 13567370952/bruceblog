@@ -4,7 +4,7 @@
 
 非单文件组件即所有组件写在同一个文件里。
 
-**_基本使用_**
+### 基本使用
 
 定义组件：
 
@@ -102,7 +102,7 @@ new Vue({
 
 3. `const school = Vue.extend(options)` 可简写为 `const school = options`
 
-**_关于 VueComponent 构造函数_**
+### 关于 VueComponent 构造函数
 
 1. 组件本质是一个名为 `VueComponent` 的构造函数，不是程序员定义的，是 `Vue.extend` 生成的
 
@@ -162,10 +162,10 @@ console.log(school === student) // false
 
 `props` 验证：
 
-- 基础类型检查：String, Number, Boolean, Array, Object, Date, Function, Symbol
+- 基础类型检查：`String, Number, Boolean, Array, Object, Date, Function, Symbol`
 - 多个可能的类型
 - 必填项检查
-- 默认值
+- [默认值](https://www.cnblogs.com/mmzuo-798/p/15188014.html)
 - 自定义验证函数 `validator`
 - `props` 是只读的，若是对象，对象内部的修改不报错，但不推荐
 
@@ -204,13 +204,13 @@ props: {
 }
 ```
 
-**_子传父_**
+**_子传父：_**
 
 - 父组件通过 `props` 给子组件传递函数，子组件调用该函数即可修改父组件的数据
 - 组件 `methods` 里函数的 this 始终指向该组件实例，可理解为 Vue 底层对这些函数做了`bind`处理
 - 通过`bind`修改 this 指向后的新函数，其 this 指向不能再次修改
 - [思否文章](https://segmentfault.com/q/1010000015951625)
-- 不推荐该方式进行子传父，可使用自定义事件
+- 不推荐该方式进行子传父，推荐使用自定义事件
 
 ```html
 <Son :addCount="addCount"></Son>

@@ -117,9 +117,9 @@ Vue.use(VueRouter)
 
 // 路由匹配规则
 const routes = [
-  { path: '/home', component: 'Home' },
-  { path: '/about', component: 'About' },
-  { path: '/movie', component: 'Movie' },
+  { path: '/home', component: Home },
+  { path: '/about', component: About },
+  { path: '/movie', component: Movie },
 ]
 
 // 创建路由实例对象
