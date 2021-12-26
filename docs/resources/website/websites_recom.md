@@ -43,6 +43,7 @@
 - [axios 中文文档](http://www.axios-js.com/)
 - [Lodash 中文文档](https://www.lodashjs.com/)
 - [Swiper 中文网](https://www.swiper.com.cn/)
+- [Echarts](https://echarts.apache.org/zh/index.html)
 - [Bootstrap 中文网](https://www.bootcss.com/)
 - [jQuery API 中文文档](https://www.jquery123.com/)
 

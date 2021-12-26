@@ -1,6 +1,6 @@
 module.exports = [
   {
-    text: 'Resources', link: '/notes/website/websites_recom'
+    text: 'Resources', link: '/resources/website/websites_recom'
   },
   {
     text: '前端学习',
@@ -11,6 +11,12 @@ module.exports = [
       { text: 'webpack', link: '/notes/webpack/webpack基础' },
       { text: 'vscode', link: '/notes/ide/vscode' },
       { text: 'Git', link: '/notes/git/git' },
+    ]
+  },
+  {
+    text: '项目',
+    items: [
+      { text: 'COVID-19', link: '/projects/covid19/Headline' }
     ]
   },
   {
