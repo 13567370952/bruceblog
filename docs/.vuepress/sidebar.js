@@ -8,5 +8,6 @@ module.exports = {
   '/notes/git': require('../notes/git/sidebar'),
   '/notes/h5c3': require('../notes/h5c3/sidebar'),
   '/otherNotes/python': require('../otherNotes/python/sidebar'),
-  '/projects/covid19': require('../projects/covid19/sidebar')
+  '/projects/covid19': require('../projects/covid19/sidebar'),
+  '/projects/pink-echarts': require('../projects/pink-echarts/sidebar'),
 }

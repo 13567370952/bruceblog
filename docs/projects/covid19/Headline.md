@@ -2,8 +2,6 @@
 
 项目线上演示地址：[http://brucecai55520.gitee.io/covid19](http://brucecai55520.gitee.io/covid19)
 
-Gitee 仓库：[https://gitee.com/brucecai55520/covid19](https://gitee.com/brucecai55520/covid19)
-
 接口主要使用的是天行数据和聚合数据提供的 API，前者没有跨域问题，后者有
 
 - 病毒信息、国内疫情数据、新闻热点：[https://www.tianapi.com/apiview/169](https://www.tianapi.com/apiview/169)

@@ -16,7 +16,8 @@ module.exports = [
   {
     text: '项目',
     items: [
-      { text: 'COVID-19', link: '/projects/covid19/Headline' }
+      { text: 'COVID-19', link: '/projects/covid19/Headline' },
+      { text: 'Echarts数据可视化展板', link: '/projects/pink-echarts/headline' }
     ]
   },
   {
