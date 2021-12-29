@@ -7,6 +7,7 @@ module.exports = {
   '/notes/ide': require('../notes/ide/sidebar'),
   '/notes/git': require('../notes/git/sidebar'),
   '/notes/h5c3': require('../notes/h5c3/sidebar'),
+  '/notes/less': require('../notes/less/sidebar'),
   '/otherNotes/python': require('../otherNotes/python/sidebar'),
   '/projects/covid19': require('../projects/covid19/sidebar'),
   '/projects/pink-echarts': require('../projects/pink-echarts/sidebar'),

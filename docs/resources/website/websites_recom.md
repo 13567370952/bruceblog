@@ -44,6 +44,7 @@
 - [Lodash 中文文档](https://www.lodashjs.com/)
 - [Swiper 中文网](https://www.swiper.com.cn/)
 - [Echarts](https://echarts.apache.org/zh/index.html)
+- [Less](https://less.bootcss.com/)
 - [Bootstrap 中文网](https://www.bootcss.com/)
 - [jQuery API 中文文档](https://www.jquery123.com/)
 
@@ -53,6 +54,7 @@
 - [看云](https://www.kancloud.cn/)
 - [BootCDN - Bootstrap 中文网开源项目免费 CDN 加速服务](https://www.bootcdn.cn/)
 - [各大开源软件镜像源](https://www.cnblogs.com/jpfss/p/10457026.html)
+- [Koala-Less 编译工具](http://koala-app.com/index-zh.html)
 - [Can I use ?](https://caniuse.com/)
 - [OSCHINA 实用在线工具](https://tool.oschina.net/)
 - [ApiPost](https://www.apipost.cn/)
@@ -72,8 +74,10 @@
 - [阮一峰的网络日志](https://www.ruanyifeng.com/blog/)
 - [廖雪峰的官方网站](https://www.liaoxuefeng.com/)
 - [美团技术团队](https://tech.meituan.com/)
-- [W3school](https://www.w3school.com.cn/index.html)
 - [CNode：Node.js 专业中文社区](https://cnodejs.org/)
+- [W3school](https://www.w3school.com.cn/index.html)
+- [w3cschool](https://www.w3cschool.cn/)
+- [菜鸟教程](https://www.runoob.com/)
 - [前端面试宝典-看云文档](https://www.kancloud.cn/pillys/qianduan/2049475)
 
 ## 我爱项目
