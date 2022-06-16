@@ -250,7 +250,7 @@ app.use(express.urlencoded({ extended: false }))
 
 - 安装中间件：`npm install cors`
 - 导入中间件：`const cors = require('cors')`
-- 配置中间件：`app.use(cors)`
+- 配置中间件：`app.use(cors())`
 
 ### CORS
 
