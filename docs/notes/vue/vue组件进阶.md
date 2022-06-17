@@ -249,7 +249,7 @@ directives: {
       el.focus()
     }
 
-    // 指令所在元素重新渲染时执行，执行 0+N 次
+    // 指令所在元素重新解析（个人觉得不应是渲染，而是解析，重新解析不一定重新渲染）时执行，执行 0+N 次
     update(el, binding) {
       el.value = binding.value
     }
@@ -274,7 +274,7 @@ Vue.directive('focus', {
 
 - 当 `bind` 函数和 `update` 函数里的逻辑完全相同时，可以简写
 - 不需要定义 `inserted` 函数才使用简写形式
-- 因此简写形式的调用时机是初次绑定和 DOM 更新
+- 因此简写形式的调用时机：初次绑定和 DOM 更新（指令所在模板被重新解析）
 
 ```html
 <h2 v-color="'red'">简写形式</h2>
