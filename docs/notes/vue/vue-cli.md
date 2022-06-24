@@ -58,7 +58,7 @@
 </html>
 ```
 
-## 关于不同版本的 Vue
+## 不同版本的 Vue 与 `render` 函数
 
 1. `vue.js` 与 `vue.runtime.xxx.js` 的区别：
 
@@ -79,6 +79,7 @@ new Vue({
 
 // render()
 render: function(createElement) {
+  // 创建元素
   return createElement('h1', 'Hello Vue')
 }
 render: createElement => createElement(App)
@@ -107,3 +108,17 @@ render: createElement => createElement(App)
 3. `v-model` 绑定的值不能是 `props` 传过来的值，因为 `props` 是不可以修改的！
 
 4. `props` 传过来的若是对象类型的值，修改对象中的属性时 Vue 不会报错，但不推荐
+
+## 一些第三方包
+
+- [nanoid](https://gitee.com/mirrors/nanoid#nano-id)
+
+```
+npm install nanoid
+
+import { nanoid } from nanoid
+
+model.id = nanoid()
+```
+
+- [dayjs](https://dayjs.fenxianglu.cn/)

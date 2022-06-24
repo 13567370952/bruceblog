@@ -440,6 +440,7 @@ watch(
 - 此处没有强制开启深度监听
 
 ```js
+// 如果监视的属性还是对象，则需要开启深度监听
 watch(
   () => person.info,
   (newVal, oldVal) => {

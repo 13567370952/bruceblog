@@ -162,8 +162,8 @@ new Vue({
 注意事项：
 
 - 组件分为路由组件和一般组件，前者放在 `pages(或views)` 文件夹，后者放在 `components` 文件夹
-- `$route` 存储着组件的路由规则信息
-- `$router` 是路由器对象，只有一个
+- 每个组件都有 `$route` 属性，存储着组件的路由规则信息
+- `$router` 是路由器对象，整个 SPA 只有一个
 
 ## 声明式导航
 
@@ -258,6 +258,7 @@ export default router
 ```html
 <template>
   <div class="about-container">
+    <!-- 要把父路由寫上 -->
     <router-link to="/about/tab1">tab1</router-link>
     <router-link to="/about/tab2">tab2</router-link>
 
@@ -329,7 +330,9 @@ const routes = [
 传递参数：
 
 ```html
+<!-- 字符串写法 -->
 <router-link :to="`/home/detail?id=${id}&title=${title}`">字符串写法</router-link>
+<!-- 对象写法 -->
 <router-link
   :to="{
     path: '/home/detail',
@@ -348,7 +351,12 @@ this.$router.push(`/home/detail?id=${id}&title=${title}`)
 this.$router.push({ path: '/home/detail', query: { id: 1, title: 'query' } })
 ```
 
-接收参数：`this.$route.query`
+接收参数：
+
+```js
+this.$route.query.id
+this.$route.query.title
+```
 
 ### params 参数（动态路由）
 
@@ -370,9 +378,30 @@ this.$router.push({ path: '/home/detail', query: { id: 1, title: 'query' } })
 
 ```html
 <router-link :to="/movie/1/21">字符串写法</router-link>
+<!-- 对象写法只能和 name 搭配使用，不能和 path 搭配 -->
+<router-link
+  :to="{
+  name: 'movie',
+  params: {
+    id: 1,
+    age: 21
+  }
+}"
+>
+  对象写法
+</router-link>
+
 <!-- query 和 params 可以一起用 -->
 <router-link :to="`/movie/1/21?id=${id}`">字符串写法</router-link>
-<router-link :to="{name:'movie', params: {id:1, age:21}, query: {school: 'love'}}">对象写法</router-link>
+<router-link
+  :to="{
+    name:'movie', 
+    params: {id:1, age:21}, 
+    query: {school: 'love'}
+  }"
+>
+  对象写法
+</router-link>
 ```
 
 ```js
@@ -481,7 +510,7 @@ const routes = [
 
 守卫回调函数 3 个形参：
 
-- `to` ：将要访问的路由的信息对象，即 `$routes`
+- `to` ：将要访问的路由的信息对象，即 `$route`
 - `from` ：将要离开的路由的信息对象
 - `next` ：放行函数（后置守卫没有）
 

@@ -1,5 +1,7 @@
 # Vue 组件化编程
 
+> 组件：实现应用局部功能代码和资源的集合
+
 ## 非单文件组件
 
 非单文件组件即所有组件写在同一个文件里。
@@ -100,7 +102,27 @@ new Vue({
 - `<school></school>`
 - `<school />` (需要 vue-cli 支持)
 
-3. `const school = Vue.extend(options)` 可简写为 `const school = options`
+3. `const school = Vue.extend(options)` 可简写为 `const school = options`。这是脚手架里 `<script>` 代码的简写来源。
+
+```js
+import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  name: 'App',
+  components: {
+    HelloWorld
+  }
+}
+
+// 完整写法
+const vc = Vue.extend({
+  name: 'App',
+  components: {
+    HelloWorld
+  }
+})
+export default vc
+```
 
 ### 关于 VueComponent 构造函数
 
@@ -167,7 +189,7 @@ console.log(school === student) // false
 - 必填项检查
 - [默认值](https://www.cnblogs.com/mmzuo-798/p/15188014.html)
 - 自定义验证函数 `validator`
-- `props` 是只读的，若是对象，对象内部的修改不报错，但不推荐
+- `props` 是只读的，若是对象，对象内部的修改不报错，但不推荐。若需修改，则把 `props` 内容拷贝一份到 `data` 进行修改
 
 **_父传子：_**
 
@@ -186,6 +208,12 @@ console.log(school === student) // false
 ```js
 // 数组形式
 props: ['num', 'msg', 'pubTime']
+
+// 仅限制类型
+props: {
+  num: Number,
+  msg: String
+}
 
 // 对象形式
 props: {
@@ -208,7 +236,7 @@ props: {
 
 - 父组件通过 `props` 给子组件传递函数，子组件调用该函数即可修改父组件的数据
 - 组件 `methods` 里函数的 this 始终指向该组件实例，可理解为 Vue 底层对这些函数做了`bind`处理
-- 通过`bind`修改 this 指向后的新函数，其 this 指向不能再次修改
+- 通过`bind`修改 this 指向后的新函数，其 this 指向不能再次修改。[官网说明](https://cn.vuejs.org/v2/api/#methods)
 - [思否文章](https://segmentfault.com/q/1010000015951625)
 - 不推荐该方式进行子传父，推荐使用自定义事件
 
@@ -244,11 +272,9 @@ export default {
 
 ### 自定义事件
 
-> 子传父
+> 自定义事件可用于实现子传父
 
 子组件触发自定义事件，并传递数据：
-
-- 解绑自定义事件`this.$off('count-change')`
 
 ```js
 // 子组件
@@ -274,8 +300,11 @@ methods: {
 ```html
 <!-- 方式一 -->
 <Son @count-change="getNewCount"></Son>
+<Son @count-change.once="getNewCount"></Son>
+
 <!-- 方式二 -->
 <Son ref="sonRef"></Son>
+
 <!-- 监听子组件原生 DOM 事件 -->
 <Son @click.native="handleClick"></Son>
 ```
@@ -295,11 +324,23 @@ export default {
   mounted() {
     // 方式二
     this.$refs.sonRef.$on('count-change', this.getNewCount)
+    this.$refs.sonRef.$once('count-change', this.getNewCount)
 
     // 或
     this.$refs.sonRef.$on('count-change', (val) => (this.father = val))
   },
 }
+```
+
+解绑自定义事件`this.$off()`：
+
+```js
+// 解绑单个自定义事件
+this.$off('count-change')
+// 解绑多个自定义事件
+this.$off(['count-change', 'add'])
+// 解绑所有自定义事件
+this.$off()
 ```
 
 ### EventBus 全局事件总线
@@ -450,7 +491,7 @@ export default {
 
 `ref` 用于给 DOM 元素或子组件注册引用信息。每个 vue 实例都有 `$refs` 对象，里面存储着 DOM 元素或子组件的引用。通过该方式可以获取到 DOM 元素或子组件实例。
 
-> `ref / $refs` 的方式只能实现父传子，是单向传递数据。
+> 可以父传子，也能子传父。子传父要和自定义事件搭配使用。
 
 ```html
 <!-- 引用 DOM 元素 -->

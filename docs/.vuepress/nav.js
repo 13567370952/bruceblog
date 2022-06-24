@@ -5,7 +5,8 @@ module.exports = [
   {
     text: '前端学习',
     items: [
-      { text: 'HTML&CSS', link: '/notes/h5c3/css' },
+      { text: 'HTML&CSS', link: '/notes/webfoundation/css' },
+      { text: 'Javascript', link: '/notes/js/what_is_js' },
       { text: 'Less', link: '/notes/less/less' },
       { text: 'Vue', link: '/notes/vue/vue核心基础' },
       { text: 'React', link: '/notes/react/react入门' },

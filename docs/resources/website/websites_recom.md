@@ -86,7 +86,7 @@
 
 ## 我爱视频
 
-- [黑马程序员 pink 老师前端入门教程](https://www.bilibili.com/video/BV14J4114768)
+- [黑马 pink 前端教程](https://www.bilibili.com/video/BV14J4114768)
 - [黑马 JavaScript 基础](https://www.bilibili.com/video/BV1ux411d75J)
 - [黑马 JS DOM BOM 教程](https://www.bilibili.com/video/BV1k4411w7sV)
 - [黑马 jQuery](https://www.bilibili.com/video/BV1a4411w7Gx)
@@ -97,6 +97,7 @@
 - [黑马 Vue 全家桶实战](https://www.bilibili.com/video/BV1x64y1S7S7)
 - [黑马 React](https://www.bilibili.com/video/BV14y4y1g7M4)
 - [黑马 Node](https://www.bilibili.com/video/BV1Ns411N7HU)
+- [尚硅谷 ES6 教程](https://www.bilibili.com/video/BV1uK411H7on)
 - [尚硅谷 3 小时入门 Ajax](https://www.bilibili.com/video/BV1WC4y1b78y)
 - [尚硅谷 5 小时打通 Git](https://www.bilibili.com/video/BV1vy4y1s7k6)
 - [尚硅谷 Webpack](https://www.bilibili.com/video/BV1e7411j7T5)
@@ -111,11 +112,8 @@
 - [爱达杂货铺](https://adzhp.cn/)
 - [虫部落](https://search.chongbuluo.com/)
 - [VIP 视频在线解析](https://vip.bljiex.cc/)
-- [AGE 动漫](https://www.agefans.vip/)
 - [爱给网-音乐配乐-3D 模型-视频素材-免费下载](https://www.aigei.com/)
 - [耳聆网-音效素材库](https://www.ear0.com/)
-- [PaperYY 免费论文查重](https://www.paperyy.com/)
-- [掌桥科研-文献一站式平台](https://www.zhangqiaokeyan.com/)
 - [大众制图](http://c.dituhui.com/)
 - [图表秀](https://sso.tubiaoxiu.com/login)
 - [微词云](https://www.weiciyun.com/)

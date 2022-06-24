@@ -63,7 +63,9 @@ Vuex 工作原理图：
 
 ## 搭建 Vuex 环境
 
-安装 Vuex：`npm install vuex --save`
+安装 Vuex：`npm install vuex@3 --save`
+
+> 注意：Vue2 安装 Vuex3，Vue3 安装 Vuex4，版本需对应。
 
 创建文件 `src/store/index.js` ：
 
