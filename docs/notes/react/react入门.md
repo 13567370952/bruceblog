@@ -102,7 +102,7 @@ React 的特点：
 
   const TDOM = document.getElementById('demo')
   console.log('虚拟DOM', VDOM)
-  console.log('真实DOM', [TDOM])
+  console.log('真实DOM', TDOM)
 </script>
 ```
 
