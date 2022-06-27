@@ -8,7 +8,11 @@ module.exports = [
     path: '/notes/js/array'
   },
   {
+    title: 'Web Storage 浏览器本地存储',
+    path: '/notes/js/webstorage'
+  },
+  {
     title: 'JS 模块化',
     path: '/notes/js/js_modules'
-  }
+  },
 ]

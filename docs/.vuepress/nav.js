@@ -5,15 +5,30 @@ module.exports = [
   {
     text: '前端学习',
     items: [
-      { text: 'HTML&CSS', link: '/notes/h5c3/css' },
-      { text: 'Javascript', link: '/notes/js/what_is_js' },
-      { text: 'Less', link: '/notes/less/less' },
-      { text: 'Vue', link: '/notes/vue/vue核心基础' },
-      { text: 'React', link: '/notes/react/react入门' },
-      { text: 'webpack', link: '/notes/webpack/webpack基础' },
-      { text: 'Nodejs', link: '/notes/nodejs/node' },
-      { text: 'vscode', link: '/notes/ide/vscode' },
-      { text: 'Git', link: '/notes/git/git' },
+      {
+        text: '基础',
+        items: [
+          { text: 'HTML&CSS', link: '/notes/h5c3/css' },
+          { text: 'Javascript', link: '/notes/js/what_is_js' },
+          { text: 'Less', link: '/notes/less/less' },
+        ]
+      },
+      {
+        text: '框架',
+        items: [
+          { text: 'Vue', link: '/notes/vue/vue核心基础' },
+          { text: 'React', link: '/notes/react/react入门' },
+        ]
+      },
+      {
+        text: '其它',
+        items: [
+          { text: 'Git', link: '/notes/git/git' },
+          { text: 'Nodejs', link: '/notes/nodejs/node' },
+          { text: 'webpack', link: '/notes/webpack/webpack基础' },
+          { text: 'vscode', link: '/notes/ide/vscode' },
+        ]
+      }
     ]
   },
   {
