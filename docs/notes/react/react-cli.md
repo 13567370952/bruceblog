@@ -7,6 +7,14 @@
 - 进入文件夹：`cd 项目名称`
 - 启动项目：`npm start`
 
+上述方式已经过时，改用下方命令。详见[官方说明](https://create-react-app.dev/docs/getting-started)。
+
+```shell
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
 ## React 脚手架项目结构
 
 `public` ：静态资源文件
