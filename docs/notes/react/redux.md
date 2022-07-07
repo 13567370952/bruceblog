@@ -157,6 +157,9 @@ export default class Count extends Component {
   increment = () => {
     const { value } = this.selectNumber
     // 将 value 转为数值
+    // 手动写 Action 对象
+    store.dispatch({ type: 'increment', data: value * 1 })
+    // 专门创建 Action 对象
     store.dispatch(createIncrementAction(value * 1))
   }
 

@@ -35,6 +35,8 @@ npm install react-router-dom -S
 
 以 `5.x` 版本为例展示基本使用：
 
+导航区使用 `<Link>`，展示区使用 `<Route>`。
+
 ```js
 // App.jsx
 import React, { Component } from 'react'
@@ -248,8 +250,9 @@ export default class MyNavLink extends Component {
 
 <Link to={{pathname: '/home/message/detail', state: {name: 'Bruce', age: 21}}}>state</Link>
 
-<!-- 注册路由，search 和 state 按正常注册即可 -->
+<!-- 注册路由 -->
 <Route path='/home/message/detail/:name/:age' component={Detail} />
+<!-- search 和 state 按正常注册即可 -->
 <Route path='/home/message/detail' component={Detail} />
 ```
 

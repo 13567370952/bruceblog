@@ -17,7 +17,7 @@ module.exports = [
         text: '框架',
         items: [
           { text: 'Vue', link: '/notes/vue/vue核心基础' },
-          { text: 'React', link: '/notes/react/react入门' },
+          { text: 'React', link: '/notes/react/react-basic' },
         ]
       },
       {

@@ -199,7 +199,14 @@ export default function personReducer(preState = initState, action) {
 
 关键步骤：在 `store.js` 中使用 `combineReducers()` 整合多个 `reducer` 来创建 `store` 对象。
 
-这样 Redux 中就以对象的形式存储着每个组件的数据。
+这样 Redux 中就以对象的形式存储着每个组件的数据。类似于这样：
+
+```js
+{
+  total: 0,
+  personList: []
+}
+```
 
 ```js
 // redux/store.js
@@ -268,9 +275,10 @@ export default connect(
 )(Person)
 ```
 
-一个细节，在 `personReducer` 中，是这样修改状态的，而没有使用 `unshift` 方法。第二种方式，React 会认为状态没有变化从而不会重新渲染页面，因为 `preState` 保存的是数组地址值，返回的地址和之前的地址是一样的，尽管数组内容发生了改变。而第一种方式返回一个新的数组的地址值，和之前不一样，因此会重新渲染页面。
+一个细节，在 `personReducer` 中，是按如下方式修改状态的，而没有使用 `unshift` 方法。在第二种方式，React 会认为状态没有变化从而不会重新渲染页面，因为 `preState` 保存的是数组地址值，返回的地址和之前的地址是一样的，尽管数组内容发生了改变。而第一种方式返回一个新的数组的地址值，和之前不一样，因此会重新渲染页面。
 
 ```js
+// 方式一
 switch (type) {
   case ADD_PERSON:
     return [data, ...preState]
@@ -278,6 +286,7 @@ switch (type) {
     return preState
 }
 
+// 方式二
 switch (type) {
   case ADD_PERSON:
     preState.unshift(data)
@@ -286,6 +295,18 @@ switch (type) {
     return preState
 }
 ```
+
+## 纯函数
+
+概念：输入同样的参数，返回同样的输出。
+
+约束：
+
+- 不能修改参数数据
+- 不产生任何副作用，如网络请求、输入和输出设备
+- 不能调用 `Date.now()` 或 `Math.random()` 等不纯的方法
+
+`reducer` 的函数必须是纯函数。
 
 ## Redux 开发者工具
 

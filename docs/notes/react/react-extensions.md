@@ -496,6 +496,7 @@ export default class Parent extends Component {
     return { hasError: error }
   }
 
+  // 子组件产生错误时调用该钩子
   componentDidCatch(error, info) {
     console.log(error, info)
     console.log('此处统计错误，反馈给服务器')

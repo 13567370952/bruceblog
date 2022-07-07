@@ -1,11 +1,11 @@
 module.exports = [
   {
     title: "react入门",
-    path: "/notes/react/react入门",
+    path: "/notes/react/react-basic",
   },
   {
     title: "react面向组件编程",
-    path: "/notes/react/react面向组件编程",
+    path: "/notes/react/react-for-components",
   },
   {
     title: "react脚手架",
@@ -13,11 +13,11 @@ module.exports = [
   },
   {
     title: "react网络请求",
-    path: "/notes/react/react网络请求",
+    path: "/notes/react/react-network",
   },
   {
-    title: "react路由",
-    path: "/notes/react/react路由",
+    title: "react router 5",
+    path: "/notes/react/react-router5",
   },
   {
     title: "react UI组件库",
@@ -33,6 +33,10 @@ module.exports = [
   },
   {
     title: "react扩展",
-    path: "/notes/react/react扩展",
+    path: "/notes/react/react-extensions",
+  },
+  {
+    title: "react router 6",
+    path: "/notes/react/react-router6",
   },
 ];
