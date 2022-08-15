@@ -197,7 +197,8 @@ p::before {
 ```css
 1、额外标签法（隔墙法）
 在浮动元素后面添加一个块级标签（如div），并设置 clear: both
-<div style=” clear:both” ></div>
+
+<div style="clear:both" ></div>
 
 2、父级元素添加overflow，将其属性值设置为 hidden、 auto 或 scroll
 
@@ -225,3 +226,5 @@ clearfix {
   *zoom:1;
 }
 ```
+
+[相关链接](https://juejin.cn/post/6976646049456717838)
