@@ -39,6 +39,12 @@ module.exports = [
     ]
   },
   {
+    text: 'Interview Qs',
+    items: [
+      { text: 'HTML&CSS', link: '/interview/html-css/html_css' },
+    ]
+  },
+  {
     text: 'Learn Other',
     items: [
       { text: 'Python', link: '/otherNotes/python/crawler' }
