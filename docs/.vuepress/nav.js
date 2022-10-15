@@ -41,7 +41,7 @@ module.exports = [
   {
     text: 'Interview Qs',
     items: [
-      { text: 'HTML&CSS', link: '/interview/html-css/html_css' },
+      { text: 'HTML&CSS', link: '/interview/html-css/html' },
     ]
   },
   {

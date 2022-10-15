@@ -1,6 +1,10 @@
 module.exports = [
   {
-    title: 'HTML&CSS',
-    path: '/interview/html-css/html_css'
-  }
+    title: 'HTML',
+    path: '/interview/html-css/html'
+  },
+  {
+    title: 'CSS',
+    path: '/interview/html-css/css'
+  },
 ]
