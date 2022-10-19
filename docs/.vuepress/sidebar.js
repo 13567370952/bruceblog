@@ -13,5 +13,6 @@ module.exports = {
   '/projects/covid19': require('../projects/covid19/sidebar'),
   '/projects/pink-echarts': require('../projects/pink-echarts/sidebar'),
   '/interview/html-css': require('../interview/html-css/sidebar'),
+  '/interview/CSBasis': require('../interview/CSBasis/sidebar'),
   '/otherNotes/python': require('../otherNotes/python/sidebar'),
 }

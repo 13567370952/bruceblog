@@ -42,6 +42,7 @@ module.exports = [
     text: 'Interview Qs',
     items: [
       { text: 'HTML&CSS', link: '/interview/html-css/html' },
+      { text: '计算机基础', link: '/interview/CSBasis/network' },
     ]
   },
   {
