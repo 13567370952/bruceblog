@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React 网络请求 | BruceBlog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/bruceblog/img/logo.png">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/bruceblog/assets/css/0.styles.748e9da5.css" as="style"><link rel="preload" href="/bruceblog/assets/js/app.87b015a3.js" as="script"><link rel="preload" href="/bruceblog/assets/js/2.935b5a28.js" as="script"><link rel="preload" href="/bruceblog/assets/js/38.f857b10a.js" as="script"><link rel="prefetch" href="/bruceblog/assets/js/10.78aedeef.js"><link rel="prefetch" href="/bruceblog/assets/js/11.6443aac3.js"><link rel="prefetch" href="/bruceblog/assets/js/12.995d9dd9.js"><link rel="prefetch" href="/bruceblog/assets/js/13.442522ab.js"><link rel="prefetch" href="/bruceblog/assets/js/14.ba246455.js"><link rel="prefetch" href="/bruceblog/assets/js/15.c113a7fc.js"><link rel="prefetch" href="/bruceblog/assets/js/16.d212cb56.js"><link rel="prefetch" href="/bruceblog/assets/js/17.3e85b591.js"><link rel="prefetch" href="/bruceblog/assets/js/18.2b5fb7e1.js"><link rel="prefetch" href="/bruceblog/assets/js/19.7e7e7296.js"><link rel="prefetch" href="/bruceblog/assets/js/20.fef359ab.js"><link rel="prefetch" href="/bruceblog/assets/js/21.f3e66835.js"><link rel="prefetch" href="/bruceblog/assets/js/22.dfd73bd4.js"><link rel="prefetch" href="/bruceblog/assets/js/23.f575911d.js"><link rel="prefetch" href="/bruceblog/assets/js/24.d96986c5.js"><link rel="prefetch" href="/bruceblog/assets/js/25.5730ccf1.js"><link rel="prefetch" href="/bruceblog/assets/js/26.29baab35.js"><link rel="prefetch" href="/bruceblog/assets/js/27.d8ac90d9.js"><link rel="prefetch" href="/bruceblog/assets/js/28.74a3ed32.js"><link rel="prefetch" href="/bruceblog/assets/js/29.4cede4df.js"><link rel="prefetch" href="/bruceblog/assets/js/3.2b1c21a7.js"><link rel="prefetch" href="/bruceblog/assets/js/30.63bad15d.js"><link rel="prefetch" href="/bruceblog/assets/js/31.277ff525.js"><link rel="prefetch" href="/bruceblog/assets/js/32.130c5157.js"><link rel="prefetch" href="/bruceblog/assets/js/33.3217b483.js"><link rel="prefetch" href="/bruceblog/assets/js/34.5c99a455.js"><link rel="prefetch" href="/bruceblog/assets/js/35.bbf7ecde.js"><link rel="prefetch" href="/bruceblog/assets/js/36.6ca18aa7.js"><link rel="prefetch" href="/bruceblog/assets/js/37.76de1708.js"><link rel="prefetch" href="/bruceblog/assets/js/39.bef7699e.js"><link rel="prefetch" href="/bruceblog/assets/js/4.08445b41.js"><link rel="prefetch" href="/bruceblog/assets/js/40.57eeabbb.js"><link rel="prefetch" href="/bruceblog/assets/js/41.c3d5198a.js"><link rel="prefetch" href="/bruceblog/assets/js/42.555ffd37.js"><link rel="prefetch" href="/bruceblog/assets/js/43.37c180df.js"><link rel="prefetch" href="/bruceblog/assets/js/44.8c325d2e.js"><link rel="prefetch" href="/bruceblog/assets/js/45.3d8a4a19.js"><link rel="prefetch" href="/bruceblog/assets/js/46.cefca82d.js"><link rel="prefetch" href="/bruceblog/assets/js/47.3759a579.js"><link rel="prefetch" href="/bruceblog/assets/js/48.30f40f45.js"><link rel="prefetch" href="/bruceblog/assets/js/49.50185397.js"><link rel="prefetch" href="/bruceblog/assets/js/5.a9fe4655.js"><link rel="prefetch" href="/bruceblog/assets/js/50.133d147f.js"><link rel="prefetch" href="/bruceblog/assets/js/51.d38dd2fe.js"><link rel="prefetch" href="/bruceblog/assets/js/52.70e5f2f8.js"><link rel="prefetch" href="/bruceblog/assets/js/53.c1565cea.js"><link rel="prefetch" href="/bruceblog/assets/js/54.5037b670.js"><link rel="prefetch" href="/bruceblog/assets/js/6.5f8b1556.js"><link rel="prefetch" href="/bruceblog/assets/js/7.a9cd0368.js"><link rel="prefetch" href="/bruceblog/assets/js/8.f3739966.js"><link rel="prefetch" href="/bruceblog/assets/js/9.b74a9359.js">
+    <link rel="stylesheet" href="/bruceblog/assets/css/0.styles.748e9da5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bruceblog/" class="home-link router-link-active"><img src="/bruceblog/img/logo.png" alt="BruceBlog" class="logo"> <span class="site-name can-hide">BruceBlog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://brucecai55520.gitee.io/bruceblogpages/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新版BruceBlog(gitee.io)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://brucecqm.github.io/bruceblogpages/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新版BruceBlog(github.io)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/bruceblog/resources/website/websites_recom.html" class="nav-link">
+  Resources
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/h5c3/css.html" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/js/what_is_js.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/less/less.html" class="nav-link">
+  Less
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/vue/vue核心基础.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/react/react-basic.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其它
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/git/git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/nodejs/node.html" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/webpack/webpack基础.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/ide/vscode.html" class="nav-link">
+  vscode
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目" class="dropdown-title"><span class="title">项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="项目" class="mobile-dropdown-title"><span class="title">项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/projects/covid19/Headline.html" class="nav-link">
+  COVID-19
+</a></li><li class="dropdown-item"><!----> <a href="/bruceblog/projects/pink-echarts/headline.html" class="nav-link">
+  Echarts数据可视化展板
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Interview Qs" class="dropdown-title"><span class="title">Interview Qs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Interview Qs" class="mobile-dropdown-title"><span class="title">Interview Qs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/interview/html-css/html.html" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/bruceblog/interview/CSBasis/network.html" class="nav-link">
+  计算机基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Learn Other" class="dropdown-title"><span class="title">Learn Other</span> <span class="arrow down"></span></button> <button type="button" aria-label="Learn Other" class="mobile-dropdown-title"><span class="title">Learn Other</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/otherNotes/python/crawler.html" class="nav-link">
+  Python
+</a></li></ul></div></div> <a href="https://gitee.com/brucecai55520/bruceblog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Gitee
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://brucecai55520.gitee.io/bruceblogpages/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新版BruceBlog(gitee.io)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://brucecqm.github.io/bruceblogpages/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新版BruceBlog(github.io)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/bruceblog/resources/website/websites_recom.html" class="nav-link">
+  Resources
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/h5c3/css.html" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/js/what_is_js.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/less/less.html" class="nav-link">
+  Less
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/vue/vue核心基础.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/react/react-basic.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其它
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/git/git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/nodejs/node.html" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/webpack/webpack基础.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/ide/vscode.html" class="nav-link">
+  vscode
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目" class="dropdown-title"><span class="title">项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="项目" class="mobile-dropdown-title"><span class="title">项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/projects/covid19/Headline.html" class="nav-link">
+  COVID-19
+</a></li><li class="dropdown-item"><!----> <a href="/bruceblog/projects/pink-echarts/headline.html" class="nav-link">
+  Echarts数据可视化展板
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Interview Qs" class="dropdown-title"><span class="title">Interview Qs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Interview Qs" class="mobile-dropdown-title"><span class="title">Interview Qs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/interview/html-css/html.html" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/bruceblog/interview/CSBasis/network.html" class="nav-link">
+  计算机基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Learn Other" class="dropdown-title"><span class="title">Learn Other</span> <span class="arrow down"></span></button> <button type="button" aria-label="Learn Other" class="mobile-dropdown-title"><span class="title">Learn Other</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/otherNotes/python/crawler.html" class="nav-link">
+  Python
+</a></li></ul></div></div> <a href="https://gitee.com/brucecai55520/bruceblog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Gitee
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/bruceblog/notes/react/react-basic.html" class="sidebar-link">react入门</a></li><li><a href="/bruceblog/notes/react/react-for-components.html" class="sidebar-link">react面向组件编程</a></li><li><a href="/bruceblog/notes/react/react-cli.html" class="sidebar-link">react脚手架</a></li><li><a href="/bruceblog/notes/react/react-network.html" aria-current="page" class="active sidebar-link">react网络请求</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/bruceblog/notes/react/react-network.html#react-脚手架配置代理" class="sidebar-link">React 脚手架配置代理</a></li><li class="sidebar-sub-header"><a href="/bruceblog/notes/react/react-network.html#消息订阅-发布机制" class="sidebar-link">消息订阅-发布机制</a></li><li class="sidebar-sub-header"><a href="/bruceblog/notes/react/react-network.html#github-搜索框案例知识点总结" class="sidebar-link">Github 搜索框案例知识点总结</a></li></ul></li><li><a href="/bruceblog/notes/react/react-router5.html" class="sidebar-link">react router 5</a></li><li><a href="/bruceblog/notes/react/react-ui.html" class="sidebar-link">react UI组件库</a></li><li><a href="/bruceblog/notes/react/redux.html" class="sidebar-link">redux</a></li><li><a href="/bruceblog/notes/react/react-redux.html" class="sidebar-link">react-redux</a></li><li><a href="/bruceblog/notes/react/react-extensions.html" class="sidebar-link">react扩展</a></li><li><a href="/bruceblog/notes/react/react-router6.html" class="sidebar-link">react router 6</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="react-网络请求"><a href="#react-网络请求" class="header-anchor">#</a> React 网络请求</h1> <h2 id="react-脚手架配置代理"><a href="#react-脚手架配置代理" class="header-anchor">#</a> React 脚手架配置代理</h2> <p>方法一：</p> <p>在 <code>package.json</code> 文件中进行配置：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token string">&quot;proxy&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://localhost:5000&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>优点：配置简单，前端请求资源可不加前缀</li> <li>缺点：不能配置多个代理</li> <li>工作方式：当请求了 3000 端口号（本机）不存在的资源时，就会把请求转发给 5000 端口号服务器</li></ul> <p>方法二：</p> <p>在 <code>src</code> 目录下创建代理配置文件 <code>setupProxy.js</code> ，进行配置：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> proxy <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http-proxy-middleware'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+    <span class="token comment">//api1是需要转发的请求(所有带有/api1前缀的请求都会转发给5000)</span>
+    <span class="token function">proxy</span><span class="token punctuation">(</span><span class="token string">'/api1'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token comment">//配置转发目标地址(能返回数据的服务器地址)</span>
+      target<span class="token operator">:</span> <span class="token string">'http://localhost:5000'</span><span class="token punctuation">,</span>
+      <span class="token comment">//控制服务器接收到的请求头中host字段的值</span>
+      <span class="token comment">/*
+      changeOrigin设置为true时，服务器收到的请求头中的host为：localhost:5000
+      changeOrigin设置为false时，服务器收到的请求头中的host为：localhost:3000
+      changeOrigin默认值为false，但一般将changeOrigin改为true
+      */</span>
+      changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
+      <span class="token comment">//去除请求前缀，保证交给后台服务器的是正常请求地址(必须配置)</span>
+      pathRewrite<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">'^/api1'</span><span class="token operator">:</span> <span class="token string">''</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">proxy</span><span class="token punctuation">(</span><span class="token string">'/api2'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      target<span class="token operator">:</span> <span class="token string">'http://localhost:5001'</span><span class="token punctuation">,</span>
+      changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      pathRewrite<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">'^/api2'</span><span class="token operator">:</span> <span class="token string">''</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="消息订阅-发布机制"><a href="#消息订阅-发布机制" class="header-anchor">#</a> 消息订阅-发布机制</h2> <p>即 React 中兄弟组件或任意组件之间的通信方式。</p> <p>使用的工具库：<a href="https://www.npmjs.com/package/pubsub-js" target="_blank" rel="noopener noreferrer">PubSubJS<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>下载安装 <code>PubSubJS</code> ：<code>npm install pubsub-js --save</code></p> <p>基础用法：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> PubSub <span class="token keyword">from</span> <span class="token string">'pubsub-js'</span>
+
+<span class="token comment">// 订阅消息</span>
+<span class="token keyword">var</span> token <span class="token operator">=</span> PubSub<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">'topic'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">msg<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 发布消息</span>
+PubSub<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span><span class="token string">'topic'</span><span class="token punctuation">,</span> <span class="token string">'hello react'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 取消订阅</span>
+PubSub<span class="token punctuation">.</span><span class="token function">unsubscribe</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="github-搜索框案例知识点总结"><a href="#github-搜索框案例知识点总结" class="header-anchor">#</a> Github 搜索框案例知识点总结</h2> <ol><li><p>设计状态时要考虑全面，例如带有网络请求的组件，要考虑请求失败怎么办。</p></li> <li><p>ES6 知识点：解构赋值 + 重命名</p></li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token punctuation">{</span> b<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+
+<span class="token comment">//传统解构赋值</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> a <span class="token punctuation">}</span> <span class="token operator">=</span> obj
+
+<span class="token comment">//连续解构赋值</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> <span class="token punctuation">{</span> b <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token operator">=</span> obj
+
+<span class="token comment">//连续解构赋值 + 重命名</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> <span class="token punctuation">{</span> b<span class="token operator">:</span> value <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token operator">=</span> obj
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><ol start="3"><li>消息订阅与发布机制</li></ol> <ul><li>先订阅，再发布（隔空对话）</li> <li>适用于任意组件间通信</li> <li>要在 <code>componentWillUnmount</code> 钩子中取消订阅</li></ul> <ol start="4"><li><code>fetch</code> 发送请求（<strong>关注分离</strong>的设计思想）</li></ol> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 先看服务器是否联系得上</span>
+  <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/api1/search/users2?q=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>keyWord<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token comment">// 再获取数据</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'请求出错'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">7/7/2022, 3:55:18 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/bruceblog/notes/react/react-cli.html" class="prev">
+        react脚手架
+      </a></span> <span class="next"><a href="/bruceblog/notes/react/react-router5.html">
+        react router 5
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/bruceblog/assets/js/app.87b015a3.js" defer></script><script src="/bruceblog/assets/js/2.935b5a28.js" defer></script><script src="/bruceblog/assets/js/38.f857b10a.js" defer></script>
+  </body>
+</html>

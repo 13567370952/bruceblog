@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浏览器本地存储 Web Storage | BruceBlog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/bruceblog/img/logo.png">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/bruceblog/assets/css/0.styles.748e9da5.css" as="style"><link rel="preload" href="/bruceblog/assets/js/app.87b015a3.js" as="script"><link rel="preload" href="/bruceblog/assets/js/2.935b5a28.js" as="script"><link rel="preload" href="/bruceblog/assets/js/31.277ff525.js" as="script"><link rel="prefetch" href="/bruceblog/assets/js/10.78aedeef.js"><link rel="prefetch" href="/bruceblog/assets/js/11.6443aac3.js"><link rel="prefetch" href="/bruceblog/assets/js/12.995d9dd9.js"><link rel="prefetch" href="/bruceblog/assets/js/13.442522ab.js"><link rel="prefetch" href="/bruceblog/assets/js/14.ba246455.js"><link rel="prefetch" href="/bruceblog/assets/js/15.c113a7fc.js"><link rel="prefetch" href="/bruceblog/assets/js/16.d212cb56.js"><link rel="prefetch" href="/bruceblog/assets/js/17.3e85b591.js"><link rel="prefetch" href="/bruceblog/assets/js/18.2b5fb7e1.js"><link rel="prefetch" href="/bruceblog/assets/js/19.7e7e7296.js"><link rel="prefetch" href="/bruceblog/assets/js/20.fef359ab.js"><link rel="prefetch" href="/bruceblog/assets/js/21.f3e66835.js"><link rel="prefetch" href="/bruceblog/assets/js/22.dfd73bd4.js"><link rel="prefetch" href="/bruceblog/assets/js/23.f575911d.js"><link rel="prefetch" href="/bruceblog/assets/js/24.d96986c5.js"><link rel="prefetch" href="/bruceblog/assets/js/25.5730ccf1.js"><link rel="prefetch" href="/bruceblog/assets/js/26.29baab35.js"><link rel="prefetch" href="/bruceblog/assets/js/27.d8ac90d9.js"><link rel="prefetch" href="/bruceblog/assets/js/28.74a3ed32.js"><link rel="prefetch" href="/bruceblog/assets/js/29.4cede4df.js"><link rel="prefetch" href="/bruceblog/assets/js/3.2b1c21a7.js"><link rel="prefetch" href="/bruceblog/assets/js/30.63bad15d.js"><link rel="prefetch" href="/bruceblog/assets/js/32.130c5157.js"><link rel="prefetch" href="/bruceblog/assets/js/33.3217b483.js"><link rel="prefetch" href="/bruceblog/assets/js/34.5c99a455.js"><link rel="prefetch" href="/bruceblog/assets/js/35.bbf7ecde.js"><link rel="prefetch" href="/bruceblog/assets/js/36.6ca18aa7.js"><link rel="prefetch" href="/bruceblog/assets/js/37.76de1708.js"><link rel="prefetch" href="/bruceblog/assets/js/38.f857b10a.js"><link rel="prefetch" href="/bruceblog/assets/js/39.bef7699e.js"><link rel="prefetch" href="/bruceblog/assets/js/4.08445b41.js"><link rel="prefetch" href="/bruceblog/assets/js/40.57eeabbb.js"><link rel="prefetch" href="/bruceblog/assets/js/41.c3d5198a.js"><link rel="prefetch" href="/bruceblog/assets/js/42.555ffd37.js"><link rel="prefetch" href="/bruceblog/assets/js/43.37c180df.js"><link rel="prefetch" href="/bruceblog/assets/js/44.8c325d2e.js"><link rel="prefetch" href="/bruceblog/assets/js/45.3d8a4a19.js"><link rel="prefetch" href="/bruceblog/assets/js/46.cefca82d.js"><link rel="prefetch" href="/bruceblog/assets/js/47.3759a579.js"><link rel="prefetch" href="/bruceblog/assets/js/48.30f40f45.js"><link rel="prefetch" href="/bruceblog/assets/js/49.50185397.js"><link rel="prefetch" href="/bruceblog/assets/js/5.a9fe4655.js"><link rel="prefetch" href="/bruceblog/assets/js/50.133d147f.js"><link rel="prefetch" href="/bruceblog/assets/js/51.d38dd2fe.js"><link rel="prefetch" href="/bruceblog/assets/js/52.70e5f2f8.js"><link rel="prefetch" href="/bruceblog/assets/js/53.c1565cea.js"><link rel="prefetch" href="/bruceblog/assets/js/54.5037b670.js"><link rel="prefetch" href="/bruceblog/assets/js/6.5f8b1556.js"><link rel="prefetch" href="/bruceblog/assets/js/7.a9cd0368.js"><link rel="prefetch" href="/bruceblog/assets/js/8.f3739966.js"><link rel="prefetch" href="/bruceblog/assets/js/9.b74a9359.js">
+    <link rel="stylesheet" href="/bruceblog/assets/css/0.styles.748e9da5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/bruceblog/" class="home-link router-link-active"><img src="/bruceblog/img/logo.png" alt="BruceBlog" class="logo"> <span class="site-name can-hide">BruceBlog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://brucecai55520.gitee.io/bruceblogpages/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新版BruceBlog(gitee.io)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://brucecqm.github.io/bruceblogpages/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新版BruceBlog(github.io)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/bruceblog/resources/website/websites_recom.html" class="nav-link">
+  Resources
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/h5c3/css.html" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/js/what_is_js.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/less/less.html" class="nav-link">
+  Less
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/vue/vue核心基础.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/react/react-basic.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其它
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/git/git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/nodejs/node.html" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/webpack/webpack基础.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/ide/vscode.html" class="nav-link">
+  vscode
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目" class="dropdown-title"><span class="title">项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="项目" class="mobile-dropdown-title"><span class="title">项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/projects/covid19/Headline.html" class="nav-link">
+  COVID-19
+</a></li><li class="dropdown-item"><!----> <a href="/bruceblog/projects/pink-echarts/headline.html" class="nav-link">
+  Echarts数据可视化展板
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Interview Qs" class="dropdown-title"><span class="title">Interview Qs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Interview Qs" class="mobile-dropdown-title"><span class="title">Interview Qs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/interview/html-css/html.html" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/bruceblog/interview/CSBasis/network.html" class="nav-link">
+  计算机基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Learn Other" class="dropdown-title"><span class="title">Learn Other</span> <span class="arrow down"></span></button> <button type="button" aria-label="Learn Other" class="mobile-dropdown-title"><span class="title">Learn Other</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/otherNotes/python/crawler.html" class="nav-link">
+  Python
+</a></li></ul></div></div> <a href="https://gitee.com/brucecai55520/bruceblog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Gitee
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://brucecai55520.gitee.io/bruceblogpages/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新版BruceBlog(gitee.io)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://brucecqm.github.io/bruceblogpages/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  新版BruceBlog(github.io)
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/bruceblog/resources/website/websites_recom.html" class="nav-link">
+  Resources
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/h5c3/css.html" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/js/what_is_js.html" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/less/less.html" class="nav-link">
+  Less
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/vue/vue核心基础.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/react/react-basic.html" class="nav-link">
+  React
+</a></li></ul></li><li class="dropdown-item"><h4>
+          其它
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/bruceblog/notes/git/git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/nodejs/node.html" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/webpack/webpack基础.html" class="nav-link">
+  webpack
+</a></li><li class="dropdown-subitem"><a href="/bruceblog/notes/ide/vscode.html" class="nav-link">
+  vscode
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目" class="dropdown-title"><span class="title">项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="项目" class="mobile-dropdown-title"><span class="title">项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/projects/covid19/Headline.html" class="nav-link">
+  COVID-19
+</a></li><li class="dropdown-item"><!----> <a href="/bruceblog/projects/pink-echarts/headline.html" class="nav-link">
+  Echarts数据可视化展板
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Interview Qs" class="dropdown-title"><span class="title">Interview Qs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Interview Qs" class="mobile-dropdown-title"><span class="title">Interview Qs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/interview/html-css/html.html" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/bruceblog/interview/CSBasis/network.html" class="nav-link">
+  计算机基础
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Learn Other" class="dropdown-title"><span class="title">Learn Other</span> <span class="arrow down"></span></button> <button type="button" aria-label="Learn Other" class="mobile-dropdown-title"><span class="title">Learn Other</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/bruceblog/otherNotes/python/crawler.html" class="nav-link">
+  Python
+</a></li></ul></div></div> <a href="https://gitee.com/brucecai55520/bruceblog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Gitee
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/bruceblog/notes/js/what_is_js.html" class="sidebar-link">JavaScript 简介</a></li><li><a href="/bruceblog/notes/js/array.html" class="sidebar-link">Javascript 数组</a></li><li><a href="/bruceblog/notes/js/webstorage.html" aria-current="page" class="active sidebar-link">Web Storage 浏览器本地存储</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/bruceblog/notes/js/webstorage.html#基本使用" class="sidebar-link">基本使用</a></li><li class="sidebar-sub-header"><a href="/bruceblog/notes/js/webstorage.html#注意事项" class="sidebar-link">注意事项</a></li><li class="sidebar-sub-header"><a href="/bruceblog/notes/js/webstorage.html#sessionstorage-与-localstorage-对比" class="sidebar-link">sessionStorage 与 localStorage 对比</a></li></ul></li><li><a href="/bruceblog/notes/js/js_modules.html" class="sidebar-link">JS 模块化</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="浏览器本地存储-web-storage"><a href="#浏览器本地存储-web-storage" class="header-anchor">#</a> 浏览器本地存储 Web Storage</h1> <p>浏览器本地存储包括两个对象：<code>sessionStorage</code> 和 <code>localStorage</code>，它们都是 <code>Storage</code> 的实例对象。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>window<span class="token punctuation">.</span>localStorage <span class="token keyword">instanceof</span> <span class="token class-name">Storage</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="基本使用"><a href="#基本使用" class="header-anchor">#</a> 基本使用</h2> <p>访问数据：<code>getItem()</code></p> <p>添加、修改数据：<code>setItem()</code></p> <p>删除数据：<code>removeItem()</code></p> <p>清空数据：<code>clear()</code></p> <p>获取给定位置的键名：<code>key()</code></p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 以 localStorage 为例，sessionStorage 都一样</span>
+<span class="token comment">// 添加数据</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'BruceBlog'</span><span class="token punctuation">)</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token number">2333</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 修改数据</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'age'</span><span class="token punctuation">,</span> <span class="token number">520</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 读取数据</span>
+localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'age'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 删除数据</span>
+localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 清空数据</span>
+localStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 遍历所有值，不知道是按什么顺序排列的</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> localStorage<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> key <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">key</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+  <span class="token keyword">let</span> value <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">key: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, value: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h2 id="注意事项"><a href="#注意事项" class="header-anchor">#</a> 注意事项</h2> <p>只能够存储字符串，不是字符串的会调用 <code>toString()</code> 方法转成字符串。</p> <p>如果想要存储对象，需要使用 <code>JSON.stringify()</code> 转成 JSON 字符串再存储，以后再用 <code>JSON.parse()</code> 还原成对象。</p> <p>如果无法转成字符串，则会报错。比如 <code>Symbol</code> 类型的变量无法转成字符串。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> book<span class="token operator">:</span> <span class="token string">'HTTP'</span><span class="token punctuation">,</span> price<span class="token operator">:</span> <span class="token number">46</span> <span class="token punctuation">}</span>
+<span class="token keyword">let</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token comment">// '[object Object]': 'object'</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'func'</span><span class="token punctuation">,</span> fn<span class="token punctuation">)</span> <span class="token comment">// 'func': 'function fn() {}'</span>
+
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'info'</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 'info': '{\&quot;book\&quot;:\&quot;HTTP\&quot;,\&quot;price\&quot;:46}'</span>
+
+localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span> <span class="token comment">// 'object'，obj2 会被转成 '[object Object]'</span>
+
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'symbol'</span><span class="token punctuation">,</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// Uncaught TypeError: Cannot convert a Symbol value to a string</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="sessionstorage-与-localstorage-对比"><a href="#sessionstorage-与-localstorage-对比" class="header-anchor">#</a> <code>sessionStorage</code> 与 <code>localStorage</code> 对比</h2> <p><code>sessionStorage</code> 是跨会话存储机制，<code>localStorage</code> 是永久存储机制。</p> <p>作用时间：<code>sessionStorage</code> 在窗口关闭后就会失效，<code>localStorage</code> 是永久存储，除非手动通过 JS 删除或清除浏览器缓存。</p> <p>作用范围：<code>sessionStorage</code> 的数据只能在<strong>同源</strong>（协议域名端口号相同）、<strong>同一个窗口</strong>共享，<code>localStorage</code> 的数据在<strong>同源、不同窗口共享（同一个浏览器）</strong>。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/27/2022, 9:52:13 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/bruceblog/notes/js/array.html" class="prev">
+        Javascript 数组
+      </a></span> <span class="next"><a href="/bruceblog/notes/js/js_modules.html">
+        JS 模块化
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/bruceblog/assets/js/app.87b015a3.js" defer></script><script src="/bruceblog/assets/js/2.935b5a28.js" defer></script><script src="/bruceblog/assets/js/31.277ff525.js" defer></script>
+  </body>
+</html>
