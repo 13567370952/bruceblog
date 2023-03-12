@@ -1,5 +1,11 @@
 module.exports = [
   {
+    text: '新版BruceBlog(gitee.io)', link: 'https://brucecai55520.gitee.io/bruceblogpages/',
+  },
+  {
+    text: '新版BruceBlog(github.io)', link: 'https://brucecqm.github.io/bruceblogpages/',
+  },
+  {
     text: 'Resources', link: '/resources/website/websites_recom'
   },
   {

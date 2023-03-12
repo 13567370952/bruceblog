@@ -3,8 +3,8 @@ home: true
 heroImage: /img/logo.png
 heroText: BruceBlog
 tagline: 一名前端er的学习笔记
-actionText: How to Build BruceBlog →
-actionLink: /notes/vuepress/vuepress
+actionText: 新版 BruceBlog →
+actionLink: https://brucecai55520.gitee.io/bruceblogpages/
 features:
   - title: 前端知识
     details: HTML、CSS、JavaScript、Vue、React...
